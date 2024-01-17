@@ -1,8 +1,9 @@
-import './App.css';
+import { Header, Cart } from "./components";
 
 function App() {
   return (
-    <div className="App">
+    <div>
+      <Header />
 
     </div>
   );
