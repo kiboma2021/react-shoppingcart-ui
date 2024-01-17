@@ -1,7 +1,10 @@
+import { useTitle } from '../hooks/useTitle';
+
 import image1 from '../assets/1.avif';
 import image2 from '../assets/2.avif';
 
-export const Cart = () => {
+export const Cart = ({title}) => {
+    useTitle({title});
   return (
     <div className='mx-40 '>
         <div className='flex flex-wrap justify-around m-5 p-5 border-4 border-gray-200 items-center'>
