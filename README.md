@@ -13,7 +13,6 @@
 - React
 - Tailwind
 
-
 ## 🚀 <a href="https://shoppingcart-ui.netlify.app/" target="_blank">Live Demo Link</a>
 
 ## :electron: <a href="https://github.com/kiboma2021/react-shoppingcart-ui" target="_blank">Source Code</a>

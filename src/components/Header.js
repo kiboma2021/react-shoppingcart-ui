@@ -15,7 +15,7 @@ export const Header = () => {
             <NavLink to="/cart" className='mx-2'>Cart</NavLink>
         </div>
         <div className='text-2xl'>
-            <NavLink to="/cart">Cart:2</NavLink>
+            <Link to="/cart">Cart:2</Link>
         </div>
 
     </header>
