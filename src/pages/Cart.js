@@ -5,7 +5,7 @@ import image2 from '../assets/2.avif';
 
 export const Cart = ({title}) => {
     useTitle({title});
-    const { total,removeFromCart } = useCart();
+    const { cartList, total,removeFromCart } = useCart();
 
     const cart_products=[
         {id: 145, name:"Sony Wh-Ch510 Bluetooth Wireless", price:145, image:image1},
@@ -20,7 +20,7 @@ export const Cart = ({title}) => {
 
         <div className='mx-40 '>
             
-                { cart_products && cart_products.map((product)=>(
+                { cartList && cartList.map((product)=>(
                     <div key={product.id} className='flex flex-wrap justify-around m-5 p-5 border-4 border-gray-200 items-center'>
                         <div className='w-32'>
                             <img src={product.image} alt={product.name} />

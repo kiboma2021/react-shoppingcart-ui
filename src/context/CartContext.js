@@ -3,7 +3,7 @@ import { cartReducer } from "../reducer/cartReducer";
 
 const initialState = {
     cartList: [],
-    total: 10,
+    total: 0,
 }
 
 const CartContext = createContext(initialState);
@@ -23,7 +23,6 @@ export const CartProvider = ({children}) => {
     }
 
     const removeFromCart = (product) => {
-        console.log("-----------clicked------------")
         const updatedCartList = state.cartList.filter(current => current.id !== product.id)
         dispatch({
             type: "REMOVE_FROM_CART",
