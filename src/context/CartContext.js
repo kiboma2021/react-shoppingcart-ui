@@ -42,7 +42,7 @@ export const CartProvider = ({children}) => {
         dispatch({
             type: "UPDATE_TOTAL",
             payload: {
-                total
+                total:total
             }
         })
     }
@@ -53,6 +53,7 @@ export const CartProvider = ({children}) => {
         cartList: state.cartList,
         addToCart,
         removeFromCart,
+
     }
     return(
         <CartContext.Provider value={value}>

@@ -3,13 +3,13 @@ import { useCart } from '../context/CartContext';
 
 export const Cart = ({title}) => {
     useTitle({title});
-    const { cartList,removeFromCart,updateTotal } = useCart();
+    const { cartList,removeFromCart,total } = useCart();
 
   return (
 
     <main>
         <div className='flex justify-center my-8'>
-            <p className='text-2xl font-bold'>Cart Items: {cartList.length} | Kes {updateTotal} </p>
+            <p className='text-2xl font-bold'>Cart Items: {cartList.length} | Kes {total} </p>
         </div>
 
         <div className='mx-40 '>
