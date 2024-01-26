@@ -20,6 +20,8 @@ export const CartProvider = ({children}) => {
                 cart_items: updatedCartList
             }
         })
+
+        updateTotal(updatedCartList);
     }
 
     const removeFromCart = (product) => {
@@ -30,7 +32,22 @@ export const CartProvider = ({children}) => {
                 cart_items: updatedCartList
             }
         })
+
+        updateTotal(updatedCartList);
     }
+
+    const updateTotal= (cart_items)=>{
+        let total=0;
+        cart_items.forEach(item => total=total+item.price);
+        dispatch({
+            type: "UPDATE_TOTAL",
+            payload: {
+                total
+            }
+        })
+    }
+
+
     const value={
         total: state.total,
         cartList: state.cartList,
