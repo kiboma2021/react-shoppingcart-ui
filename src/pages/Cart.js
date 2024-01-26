@@ -22,7 +22,7 @@ export const Cart = ({title}) => {
                         <p className='m-5'>{product.name}</p>
                         <p className='m-5'>{product.price}</p>
                         <div>
-                            <span onClick={()=>removeFromCart(product)} className='bg-red-600 p-2 m-2 rounded'>Remove</span>
+                            <span onClick={()=>removeFromCart(product)} className='bg-red-600 p-2 m-2 rounded text-white'>Remove</span>
                         </div>
                     </div>
                 )) }
