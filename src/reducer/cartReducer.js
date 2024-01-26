@@ -3,10 +3,10 @@ export const cartReducer =(state,action)=>{
 
     switch(type){
         case "ADD_TO_CART":
-            return
+            return { ...state, cartList: payload.cart_items}
 
         case "REMOVE_FROM_CART":
-            return
+            return { ...state, cartList: payload.cart_items}
         
         default:
             throw new Error("No case found in cartReducer")

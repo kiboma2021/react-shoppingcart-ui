@@ -10,10 +10,33 @@ const CartContext = createContext(initialState);
 
 
 export const CartProvider = ({children}) => {
-    const [state, dispatch] = useReducer(cartReducer, initialState); 
+    const [state, dispatch] = useReducer(cartReducer, initialState);
+    
+    const addToCart = (product) =>{
+        const updatedCartList = state.cartList.concat(product);
+        dispatch({
+            type: "ADD_TO_CART",
+            payload: {
+                cart_items: updatedCartList
+            }
+        })
+    }
+
+    const removeFromCart = (product) => {
+        console.log("-----------clicked------------")
+        const updatedCartList = state.cartList.filter(current => current.id !== product.id)
+        dispatch({
+            type: "REMOVE_FROM_CART",
+            payload: {
+                cart_items: updatedCartList
+            }
+        })
+    }
     const value={
         total: state.total,
-        cartList: state.cartList
+        cartList: state.cartList,
+        addToCart,
+        removeFromCart,
     }
     return(
         <CartContext.Provider value={value}>

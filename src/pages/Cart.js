@@ -5,7 +5,7 @@ import image2 from '../assets/2.avif';
 
 export const Cart = ({title}) => {
     useTitle({title});
-    const { total } = useCart();
+    const { total,removeFromCart } = useCart();
 
     const cart_products=[
         {id: 145, name:"Sony Wh-Ch510 Bluetooth Wireless", price:145, image:image1},
@@ -28,7 +28,7 @@ export const Cart = ({title}) => {
                         <p className='m-5'>{product.name}</p>
                         <p className='m-5'>{product.price}</p>
                         <div>
-                            <span className='bg-red-600 p-2 m-2 rounded'>Remove</span>
+                            <span onClick={()=>removeFromCart(product)} className='bg-red-600 p-2 m-2 rounded'>Remove</span>
                         </div>
                     </div>
                 )) }
