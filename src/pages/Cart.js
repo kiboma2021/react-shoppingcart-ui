@@ -1,21 +1,15 @@
 import { useTitle } from '../hooks/useTitle';
 import { useCart } from '../context/CartContext';
-import image1 from '../assets/1.avif';
-import image2 from '../assets/2.avif';
 
 export const Cart = ({title}) => {
     useTitle({title});
-    const { cartList, total,removeFromCart } = useCart();
+    const { cartList,removeFromCart } = useCart();
 
-    const cart_products=[
-        {id: 145, name:"Sony Wh-Ch510 Bluetooth Wireless", price:145, image:image1},
-        {id: 149, name:"boAt Rockerz 450", price:455, image:image2},
-    ]
   return (
 
     <main>
         <div className='flex justify-center my-8'>
-            <p className='text-2xl font-bold'>Cart Items: {total} | Kes 2,542  </p>
+            <p className='text-2xl font-bold'>Cart Items: {cartList.length} | Kes 2,542  </p>
         </div>
 
         <div className='mx-40 '>
